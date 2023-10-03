@@ -1,3 +1,5 @@
+
+//variables
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -16,3 +18,34 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+
+let imageActuel =0;
+
+function changeSlide (){
+
+	const bannerImg = document.querySelector(".banner-img");
+	imageActuel = (imageActuel + 1) % slides.length ;
+	bannerImg.src = `./assets/images/slideshow/${slides[imageActuel].image}`;
+
+const ba
+}
+
+
+// EventListerner sur chacune des flèches //
+
+const leftArrow = document.getElementById("left");
+const rightArrow = document.getElementById("right");
+
+leftArrow.addEventListener("click",() =>{
+console.log('Alert 1!');
+	changeSlide();
+});
+
+rightArrow.addEventListener("click",() =>{
+	console.log('Alert 2!');
+	changeSlide();
+});
+
+
+//-------- dots
