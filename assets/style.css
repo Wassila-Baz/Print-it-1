@@ -126,11 +126,14 @@ header {
 #banner .arrow {
 	position: absolute;
 }
-#banner .arrow_left {
-	left: 10px;
+
+#left {
+	position: absolute;
+	right: 380px;
 }
-#banner .arrow_right {
-	right: 10px;
+#right {
+	position: absolute;
+	left: 380px;
 }
 /* Gestion des points du carrousel */
 .dots {
@@ -147,9 +150,14 @@ header {
 	border-radius: 100%;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
 }
-.dot_selected {
+.custom_dot_selected {
 	background-color: #fff;
 }
+
+.banner-tagLine {
+    display: none;
+}
+
 /* Fin du code CSS pour le carousel */
 #banner p {
 	font-family: 'Roboto Slab', sans-serif;
