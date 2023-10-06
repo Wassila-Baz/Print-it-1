@@ -1,4 +1,4 @@
-// Variables des diapositives
+// Variables tableau images
 const slides = [
     {
         "image": "slide1.jpg",
@@ -38,7 +38,7 @@ function changeSlide(direction, index) {
     bannerImg.src = `./assets/images/slideshow/${slides[imageActuel].image}`;
     tagLine.innerHTML = slides[imageActuel].tagLine;
 
-    // Mettez à jour la classe "dot_selected" pour les points indicateurs
+
     dots.forEach(dot => dot.classList.remove("custom_dot_selected"));
     dots[imageActuel].classList.add("custom_dot_selected");
 }
