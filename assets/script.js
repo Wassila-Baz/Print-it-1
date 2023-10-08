@@ -35,7 +35,7 @@ function changeSlide(index) {
     dots.forEach(dot => dot.classList.remove("custom_dot_selected"));
     dots[currentSlide].classList.add("custom_dot_selected");
 }
-
+ 
 // EventListeners sur les flèches
 const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
