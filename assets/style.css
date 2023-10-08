@@ -126,15 +126,13 @@ header {
 #banner .arrow {
 	position: absolute;
 }
-
-#left {
-	position: absolute;
-	right: 380px;
+#banner .arrow_left {
+	left: 10px;
 }
-#right {
-	position: absolute;
-	left: 380px;
+#banner .arrow_right {
+	right: 10px;
 }
+/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des points du carrousel */
 .dots {
 	position: absolute;
@@ -152,10 +150,6 @@ header {
 }
 .custom_dot_selected {
 	background-color: #fff;
-}
-
-.banner-tagLine {
-    display: none;
 }
 
 /* Fin du code CSS pour le carousel */

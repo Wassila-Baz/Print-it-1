@@ -19,58 +19,51 @@ const slides = [
 ];
 
 // Variable pour suivre l'image actuelle
-let imageActuel = 0;
-
-// Fonction pour changer de diapositive
-function changeSlide(direction, index) {
+let currentSlide = 0;
     const bannerImg = document.querySelector(".banner-img");
     const dots = document.querySelectorAll(".dot");
-    const tagLine = document.querySelector(".banner-tagLine");
+    const textSlide = document.querySelector("#banner p");
+// Fonction pour changer de diapositive
+function changeSlide(index) {
 
-    if (direction === "right") {
-        imageActuel = (imageActuel + 1) % slides.length;
-    } else if (direction === "left") {
-        imageActuel = (imageActuel - 1 + slides.length) % slides.length;
-    } else if (direction === "dot") {
-        imageActuel = index;
-    }
 
-    bannerImg.src = `./assets/images/slideshow/${slides[imageActuel].image}`;
-    tagLine.innerHTML = slides[imageActuel].tagLine;
+    currentSlide = index;
 
+    bannerImg.src = `./assets/images/slideshow/${slides[currentSlide].image}`;
+    textSlide.innerHTML = slides[currentSlide].tagLine;
 
     dots.forEach(dot => dot.classList.remove("custom_dot_selected"));
-    dots[imageActuel].classList.add("custom_dot_selected");
+    dots[currentSlide].classList.add("custom_dot_selected");
 }
 
 // EventListeners sur les flèches
-const leftArrow = document.getElementById("left");
-const rightArrow = document.getElementById("right");
+const leftArrow = document.querySelector(".arrow_left");
+const rightArrow = document.querySelector(".arrow_right");
 
 leftArrow.addEventListener("click", () => {
-    changeSlide("left");
+    if (currentSlide > 0) {
+        changeSlide(currentSlide - 1);
+    } else {
+        changeSlide(slides.length - 1);
+    }
 });
 
 rightArrow.addEventListener("click", () => {
-    changeSlide("right");
+    if (currentSlide < slides.length - 1) {
+        changeSlide(currentSlide + 1);
+    } else {
+        changeSlide(0);
+    }
 });
 
 // EventListeners pour les points indicateurs
-const dots = document.querySelectorAll(".dot");
+
 
 dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
-        changeSlide("dot", index);
+        changeSlide(index);
     });
 });
 
-// EventListeners pour les points indicateurs
-dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        changeSlide("dot", index);
-        // Supprimer la classe "custom_dot_selected" de tous les points
-        dots.forEach(dot => dot.classList.remove("custom_dot_selected"));
-        // Ajouter la classe "custom_dot_selected" uniquement au point cliqué
-        dot.classList.add("custom_dot_selected");
-    });
-});
+// Sélectionnez le premier point indicateur et ajoutez-lui la classe "custom_dot_selected"
+dots[0].classList.add("custom_dot_selected");
