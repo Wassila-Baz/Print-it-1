@@ -66,5 +66,5 @@ dots.forEach((dot, index) => {
     });
 });
 
-// Sélectionne le premier point indicateur et de la classe "custom_dot_selected"
+// Sélectionne le premier point indicateur et créer la classe "custom_dot_selected"
 dots[0].classList.add("custom_dot_selected");
