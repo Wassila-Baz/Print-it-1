@@ -19,13 +19,14 @@ const slides = [
 ];
 
 // Variable pour suivre l'image actuelle
-let currentSlide = 0;
+    let currentSlide = 0;
+
     const bannerImg = document.querySelector(".banner-img");
     const dots = document.querySelectorAll(".dot");
     const textSlide = document.querySelector("#banner p");
+
 // Fonction pour changer de diapositive
 function changeSlide(index) {
-
 
     currentSlide = index;
 
@@ -65,5 +66,5 @@ dots.forEach((dot, index) => {
     });
 });
 
-// Sélectionnez le premier point indicateur et ajoutez-lui la classe "custom_dot_selected"
+// Sélectionne le premier point indicateur et de la classe "custom_dot_selected"
 dots[0].classList.add("custom_dot_selected");
